@@ -26,7 +26,7 @@
         </ul>
         </nav>
 <ul class="dot contacts-list">
-    <li class="header-email"> <a href="mailto:info@devstudio.com"class="contacs-link"> <svg class="header-post-icon" width="16" height="12">
+    <li class="header-email"> <a href="mailto:info@devstudio.com" class="contacs-link"> <svg class="header-post-icon" width="16" height="12">
         <use href="./images/icons.svg#icon-envelope"></use></svg
       >info@devstudio.com</a></li>
     <li><a href="tel:+380961111111" class="contacs-link"> <svg class="header-tel-icon" width="10" height="16"> <use href="./images/icons.svg#icon-smartphone"></use></svg>+380961111111</a></li>
@@ -470,22 +470,20 @@
             placeholder="Введите текст"
             id="feedback"
           ></textarea>
+           </div>
 
-          <div class="modal-check">
-						<label class="modal-check-title">
-							<input
-								type="checkbox"
-								name="confirmation"
-								class="modal-check-input visually-hidden"
-							/>
-							<svg class="check-icon" width="16" height="15">
-								<use href="./images/icons.svg#icon-check"></use>
-							</svg>
-							Соглашаюсь с рассылкой и принимаю
-							<a href="" class="license-link">Условия договора</a>
-						</label>
-					</div>
-          <button type="submit" class="send-btn">Отправить</button>
+           <div class="modal-check">
+            <input type="checkbox" name="privacy" id="privacy" class="input-check visually-hidden"/>
+            <label for="privacy" class="check-text">
+            <span><svg class="check-icons" width="15" height="16">
+              <use href="./images/icons.svg#icon-check"></use>
+            </svg></span>
+            Соглашаюсь с рассылкой и принимаю &nbsp;<a  href="">Условия договора</a></label>
+           </div>
+
+
+
+           <button type="submit" class="send-btn">Отправить</button>
           </form>
       </div>
     </div>    

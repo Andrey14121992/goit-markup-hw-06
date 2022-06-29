@@ -117,6 +117,20 @@ padding-right: 15px;
 margin: 0 auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -866,6 +880,7 @@ color: #757575;
 }
 
 .modal {
+  box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -878,7 +893,8 @@ color: #757575;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding-top: 40px;
+  padding:40px;
+  
 }
 
 .modal-btn {
@@ -926,16 +942,17 @@ color: #FFFFFF;
 
 .mailing-form {
 display: flex;
-align-items: flex-end;
+align-items: center;
 
 }
 
 
 .mailing-input {
-  margin-right: 12px;
-  padding-left: 16px;
+margin-right: 12px;
+padding-left: 16px;
 width: 358px;
 height: 50px;
+color: rgba(255, 255, 255, 0.6);
 background-color: transparent;
 border: 1px solid rgba(255, 255, 255, 0.3);
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -996,9 +1013,10 @@ margin-bottom: 10px;
 }
 
 .form-label {
+  display: block;
   font-size: 12px;
   line-height: 14px;
-  
+  padding-bottom: 4px;
   letter-spacing: 0.01em;
   
   color: #757575;
@@ -1007,7 +1025,7 @@ margin-bottom: 10px;
 .form-input {
   width: 100%;
   height: 40px;
-  padding-left:15px;
+  
   margin-top: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -1026,15 +1044,25 @@ margin-bottom: 10px;
   
 }
 
+
+
+
 .form-input:focus {
-  border: 1px solid #2196f3;
+  border-color: #2196f3;
 }
 
+.form-input:focus + .input-icons {
+  fill: #2196f3;
+}
+
+.modal-area {
+  margin-top: 10px;
+  margin-bottom: 20px;
+ 
+}
 
 .modal-text-area {
-  margin-top: 4px;
-  margin-bottom: 20px;
-  padding: 12px 16px;
+  display: block;
   width: 448px;
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -1057,67 +1085,78 @@ margin-bottom: 10px;
   border: 1px solid #2196f3;
    }
 
-   .modal-check {
+
+
+   /*------------Checkbox--------*/
+   
+   .check-text {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: #757575;
     display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
+    align-items: center;
+   }
+
+   .check-text a {
+    color: #2196F3;
+   }
 
 
-.check-icon {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+   /*-------1 вариант-------*.
+   .check-text::before {
+    content: "";
+    width: 16px;
+    height: 15px;
+    background: #2196F3;
+    border-radius: 2px;
+    margin-right: 5px;
+   }
 
-  border-radius: 2px;
-  border: 2px solid #212121;
-  background-color: transparent;
+   .input-check:checked + .check-text::before {
+    background-color: #2196F3;
+    background-image: url(../images/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+   }
+
+
+
+
+/*----------2 вариант----------*/
+.check-text span {
+  width: 16px;
+    height: 15px;
+    
+    background: #2196F3;
+    
+    border-radius: 2px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.check-icons {
   fill: transparent;
-  transition-property: border;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.modal-check-input:checked + .check-icon,
-.modal-check-input:checked:focus + .check-icon,
-.modal-check-input:checked:hover + .check-icon {
-  border: none;
-  background-color: #2196f3;
-}
-
-.modal-check-input:focus + .check-icon,
-.modal-check-input:hover + .check-icon {
-  border: 2px solid #2196f3;
 }
 
 
 
+.input-check:checked + .check-text .check-icons {
+  fill:  #FFFFFF;;
 
-.modal-check-title {
-  position: relative;
-  line-height: 1.71;
-  padding-left: 23px;
-  cursor: pointer;
 }
 
-.license-link {
-  display: inline-block;
-  line-height: 1.71;
-  color: #2196f3;
-}
 
-.license-link:focus,
-.license-link:hover {
-  text-decoration: none;
-}
 
+   /*--------Кнопка---------*/
 .send-btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 55px;
+  margin-top: 30px;
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
@@ -1128,6 +1167,8 @@ margin-bottom: 10px;
   border-radius: 4px;
 
 }
+
+
 
 
 
