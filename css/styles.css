@@ -887,7 +887,7 @@ color: #757575;
 
   transform: translate(-50%, -50%);
   width: 528px;
-  min-height: 581px;
+  height: 581px;
 
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -1016,7 +1016,6 @@ margin-bottom: 10px;
   display: block;
   font-size: 12px;
   line-height: 14px;
-  padding-bottom: 4px;
   letter-spacing: 0.01em;
   
   color: #757575;
@@ -1025,8 +1024,10 @@ margin-bottom: 10px;
 .form-input {
   width: 100%;
   height: 40px;
-  
+  padding: 0;
+  padding-left: 36px;
   margin-top: 4px;
+  box-sizing: border-box;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   background-color: transparent;
@@ -1056,13 +1057,14 @@ margin-bottom: 10px;
 }
 
 .modal-area {
-  margin-top: 10px;
   margin-bottom: 20px;
  
 }
 
 .modal-text-area {
+  margin-top: 4px;
   display: block;
+  box-sizing: border-box;
   width: 448px;
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -1089,7 +1091,11 @@ margin-bottom: 10px;
 
    /*------------Checkbox--------*/
    
+
+   
+
    .check-text {
+    justify-content: center;
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.03em;
@@ -1103,18 +1109,18 @@ margin-bottom: 10px;
    }
 
 
-   /*-------1 вариант-------*.
+   /*--------1вариант----------*
    .check-text::before {
     content: "";
     width: 16px;
     height: 15px;
-    background: #2196F3;
+    background: #212121;
     border-radius: 2px;
     margin-right: 5px;
    }
 
    .input-check:checked + .check-text::before {
-    background-color: #2196F3;
+    background-color: #212121;
     background-image: url(../images/check.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -1125,16 +1131,18 @@ margin-bottom: 10px;
 
 
 /*----------2 вариант----------*/
+
 .check-text span {
-  width: 16px;
+    width: 16px;
     height: 15px;
     
-    background: #2196F3;
-    
+    background-color: #2196f3;
+    border: 2px solid #212121;
     border-radius: 2px;
     margin-right: 5px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .check-icons {
@@ -1144,8 +1152,19 @@ margin-bottom: 10px;
 
 
 .input-check:checked + .check-text .check-icons {
-  fill:  #FFFFFF;;
+  fill: #ffffff;
 
+}
+
+.input-check:checked + .check-text span {
+  background-color: #212121;
+ 
+  
+}
+
+
+.input-check:focus + .check-text span {
+  border-color: 
 }
 
 
@@ -1161,7 +1180,7 @@ margin-bottom: 10px;
   line-height: 1.88;
   letter-spacing: 0.06em;
   color:  #ffffff;
-  background-color: #2196f3;;
+  background-color: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   border-radius: 4px;
