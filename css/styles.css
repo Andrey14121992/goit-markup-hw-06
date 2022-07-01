@@ -1136,8 +1136,7 @@ margin-bottom: 10px;
     width: 16px;
     height: 15px;
     
-    background-color: #2196f3;
-    border: 2px solid #212121;
+    border: 1px solid #212121;
     border-radius: 2px;
     margin-right: 5px;
     display: flex;
@@ -1151,21 +1150,16 @@ margin-bottom: 10px;
 
 
 
-.input-check:checked + .check-text .check-icons {
-  fill: #ffffff;
 
-}
 
 .input-check:checked + .check-text span {
-  background-color: #212121;
+  background-color: #2196F3;
  
   
 }
 
 
-.input-check:focus + .check-text span {
-  border-color: 
-}
+
 
 
 
